@@ -1,35 +1,37 @@
 <script>
-	export let name;
+	import List1 from "./List1.svelte";
+
+	let titre = "Mes lignesssss";
+
+    let compteur = 0;
+    const increment = () => {
+        compteur++;
+    }
+
+    const decrement = () => {
+        compteur--;
+    }
+
+    const reset = () => {
+        compteur = 0;
+    }
+
 </script>
 
 <main>
-	<h1 class="text-black">Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<List1 montitre={titre}/>
+
+    <div>{compteur}</div>
+    <button on:click={increment}>+1</button>
+    <button on:click={decrement}>-1</button>
+    <button on:click={reset}>Reset</button>
 </main>
 
 <style global>
-	@import 'tailwindcss/base';
+    @import 'tailwindcss/base';
 
-	@import 'tailwindcss/components';
+    @import 'tailwindcss/components';
 
-	@import 'tailwindcss/utilities';
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+    @import 'tailwindcss/utilities';
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
