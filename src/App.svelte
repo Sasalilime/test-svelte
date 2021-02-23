@@ -6,6 +6,8 @@
     import Input from "./Input.svelte";
     import Form from "./Form.svelte";
     import Reactivity from "./Reactivity.svelte";
+    import EventAndFctInline from "./EventAndFctInline.svelte";
+    import ChildToParent from "./ChildToParent.svelte";
 
     let titre = "Mes lignesssss";
 
@@ -29,6 +31,10 @@
         compteur = 0;
     }
 
+    const fonctionParent = (event) => {
+        console.log('Quelque chose a changé' + event.detail.customtxt);
+    }
+
 </script>
 <main>
     <div class="flex justify-around">
@@ -49,7 +55,14 @@
         <Reactivity/>
     </div>
     <div class="flex justify-around">
-
+        <EventAndFctInline/>
+        <ChildToParent on:info-carte={fonctionParent}>
+            <h2>Mon titre depuis le parent</h2>
+            <div slot="contenu">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, consequuntur corporis debitis eligendi
+                    eum hic minus, nemo, omnis reprehenderit similique totam vero voluptas voluptatibus voluptatum?</p>
+            </div>
+        </ChildToParent>
     </div>
 
 
