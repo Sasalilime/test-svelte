@@ -179,6 +179,12 @@ var app = (function () {
         }
     }
 
+    const globals = (typeof window !== 'undefined'
+        ? window
+        : typeof globalThis !== 'undefined'
+            ? globalThis
+            : global);
+
     function destroy_block(block, lookup) {
         block.d(1);
         lookup.delete(block.key);
@@ -559,14 +565,14 @@ var app = (function () {
     			p = element("p");
     			t12 = text(/*nationality*/ ctx[1]);
     			add_location(h2, file, 10, 5, 132);
-    			add_location(li0, file, 12, 8, 190);
-    			add_location(li1, file, 13, 8, 215);
-    			add_location(li2, file, 14, 8, 240);
-    			add_location(li3, file, 15, 8, 265);
-    			add_location(li4, file, 16, 8, 290);
+    			add_location(li0, file, 12, 8, 191);
+    			add_location(li1, file, 13, 8, 216);
+    			add_location(li2, file, 14, 8, 241);
+    			add_location(li3, file, 15, 8, 266);
+    			add_location(li4, file, 16, 8, 291);
     			attr_dev(ul, "class", "text-red-500");
     			add_location(ul, file, 11, 4, 156);
-    			add_location(p, file, 19, 4, 322);
+    			add_location(p, file, 19, 4, 323);
     			add_location(div, file, 10, 0, 127);
     		},
     		l: function claim(nodes) {
@@ -1644,30 +1650,43 @@ var app = (function () {
     	let t1;
     	let input0;
     	let t2;
-    	let h1;
-    	let t3;
-    	let t4_value = /*objDataForm*/ ctx[0].pays + "";
-    	let t4;
-    	let t5;
     	let label1;
-    	let t7;
+    	let t4;
     	let input1;
-    	let t8;
-    	let h20;
-    	let t9;
-    	let t10_value = /*objDataForm*/ ctx[0].pop + "";
-    	let t10;
-    	let t11;
+    	let t5;
     	let label2;
-    	let t13;
+    	let t7;
     	let input2;
+    	let t8;
+    	let label3;
+    	let t10;
+    	let textarea;
+    	let t11;
+    	let br0;
+    	let t12;
+    	let button;
     	let t14;
-    	let h21;
+    	let br1;
     	let t15;
-    	let t16_value = /*objDataForm*/ ctx[0].superficie + "";
+    	let h1;
     	let t16;
     	let t17;
-    	let button;
+    	let t18;
+    	let h20;
+    	let t19;
+    	let t20;
+    	let t21;
+    	let h21;
+    	let t22;
+    	let t23;
+    	let t24;
+    	let h22;
+    	let t25;
+    	let t26;
+    	let t27;
+    	let p;
+    	let t28_value = /*pop*/ ctx[3] / 100 + "";
+    	let t28;
     	let mounted;
     	let dispose;
 
@@ -1680,58 +1699,85 @@ var app = (function () {
     			t1 = space();
     			input0 = element("input");
     			t2 = space();
-    			h1 = element("h1");
-    			t3 = text("Votre pays est ");
-    			t4 = text(t4_value);
-    			t5 = space();
     			label1 = element("label");
     			label1.textContent = "La population";
-    			t7 = space();
+    			t4 = space();
     			input1 = element("input");
-    			t8 = space();
-    			h20 = element("h2");
-    			t9 = text("La population est de ");
-    			t10 = text(t10_value);
-    			t11 = space();
+    			t5 = space();
     			label2 = element("label");
-    			label2.textContent = "La supericie";
-    			t13 = space();
+    			label2.textContent = "La superficie";
+    			t7 = space();
     			input2 = element("input");
-    			t14 = space();
-    			h21 = element("h2");
-    			t15 = text("La superficie est ");
-    			t16 = text(t16_value);
-    			t17 = space();
+    			t8 = space();
+    			label3 = element("label");
+    			label3.textContent = "Votre message";
+    			t10 = space();
+    			textarea = element("textarea");
+    			t11 = space();
+    			br0 = element("br");
+    			t12 = space();
     			button = element("button");
     			button.textContent = "Envoyer les données";
+    			t14 = space();
+    			br1 = element("br");
+    			t15 = space();
+    			h1 = element("h1");
+    			t16 = text("Votre pays est ");
+    			t17 = text(/*pays*/ ctx[1]);
+    			t18 = space();
+    			h20 = element("h2");
+    			t19 = text("La population est de ");
+    			t20 = text(/*pop*/ ctx[3]);
+    			t21 = space();
+    			h21 = element("h2");
+    			t22 = text("La superficie est ");
+    			t23 = text(/*superficie*/ ctx[2]);
+    			t24 = space();
+    			h22 = element("h2");
+    			t25 = text("Votre message ");
+    			t26 = text(/*txt*/ ctx[4]);
+    			t27 = space();
+    			p = element("p");
+    			t28 = text(t28_value);
     			attr_dev(label0, "for", "pays");
-    			add_location(label0, file$5, 22, 8, 336);
+    			add_location(label0, file$5, 27, 8, 484);
     			attr_dev(input0, "id", "pays");
     			attr_dev(input0, "type", "text");
-    			add_location(input0, file$5, 23, 8, 381);
-    			attr_dev(h1, "class", "border-b-2 mb-4");
-    			add_location(h1, file$5, 24, 8, 449);
+    			add_location(input0, file$5, 28, 8, 529);
     			attr_dev(label1, "for", "population");
-    			add_location(label1, file$5, 25, 8, 524);
+    			add_location(label1, file$5, 29, 8, 597);
     			attr_dev(input1, "id", "population");
     			attr_dev(input1, "type", "number");
-    			add_location(input1, file$5, 26, 8, 578);
-    			attr_dev(h20, "class", "border-b-2 mb-4");
-    			add_location(h20, file$5, 27, 8, 653);
+    			add_location(input1, file$5, 30, 8, 651);
     			attr_dev(label2, "for", "superficie");
-    			add_location(label2, file$5, 28, 8, 733);
+    			add_location(label2, file$5, 31, 8, 726);
     			attr_dev(input2, "id", "superficie");
-    			attr_dev(input2, "type", "number");
-    			add_location(input2, file$5, 29, 8, 786);
-    			attr_dev(h21, "class", "border-b-2 mb-4");
-    			add_location(h21, file$5, 30, 8, 868);
+    			attr_dev(input2, "type", "range");
+    			attr_dev(input2, "min", "10");
+    			attr_dev(input2, "max", "100");
+    			add_location(input2, file$5, 32, 8, 780);
+    			attr_dev(label3, "for", "txt");
+    			add_location(label3, file$5, 33, 8, 880);
+    			attr_dev(textarea, "id", "txt");
+    			add_location(textarea, file$5, 34, 8, 927);
+    			add_location(br0, file$5, 35, 8, 987);
     			attr_dev(button, "type", "submit");
-    			attr_dev(button, "class", "2xl:bg-blue-300 rounded-2xl px-4 h-8");
-    			add_location(button, file$5, 31, 8, 952);
+    			attr_dev(button, "class", "bg-blue-300 rounded-2xl px-4 h-8");
+    			add_location(button, file$5, 36, 8, 1000);
     			attr_dev(form, "class", "");
-    			add_location(form, file$5, 21, 4, 287);
+    			add_location(form, file$5, 26, 4, 435);
+    			add_location(br1, file$5, 38, 4, 1108);
+    			attr_dev(h1, "class", "mb-4");
+    			add_location(h1, file$5, 39, 4, 1117);
+    			attr_dev(h20, "class", "mb-4");
+    			add_location(h20, file$5, 40, 4, 1165);
+    			attr_dev(h21, "class", "mb-4");
+    			add_location(h21, file$5, 41, 4, 1218);
+    			attr_dev(h22, "class", "mb-4");
+    			add_location(h22, file$5, 42, 4, 1275);
+    			add_location(p, file$5, 44, 4, 1322);
     			attr_dev(main, "class", "container");
-    			add_location(main, file$5, 20, 0, 258);
+    			add_location(main, file$5, 25, 0, 406);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1744,36 +1790,54 @@ var app = (function () {
     			append_dev(form, input0);
     			set_input_value(input0, /*objDataForm*/ ctx[0].pays);
     			append_dev(form, t2);
-    			append_dev(form, h1);
-    			append_dev(h1, t3);
-    			append_dev(h1, t4);
-    			append_dev(form, t5);
     			append_dev(form, label1);
-    			append_dev(form, t7);
+    			append_dev(form, t4);
     			append_dev(form, input1);
     			set_input_value(input1, /*objDataForm*/ ctx[0].pop);
-    			append_dev(form, t8);
-    			append_dev(form, h20);
-    			append_dev(h20, t9);
-    			append_dev(h20, t10);
-    			append_dev(form, t11);
+    			append_dev(form, t5);
     			append_dev(form, label2);
-    			append_dev(form, t13);
+    			append_dev(form, t7);
     			append_dev(form, input2);
     			set_input_value(input2, /*objDataForm*/ ctx[0].superficie);
-    			append_dev(form, t14);
-    			append_dev(form, h21);
-    			append_dev(h21, t15);
-    			append_dev(h21, t16);
-    			append_dev(form, t17);
+    			append_dev(form, t8);
+    			append_dev(form, label3);
+    			append_dev(form, t10);
+    			append_dev(form, textarea);
+    			set_input_value(textarea, /*objDataForm*/ ctx[0].txt);
+    			append_dev(form, t11);
+    			append_dev(form, br0);
+    			append_dev(form, t12);
     			append_dev(form, button);
+    			append_dev(main, t14);
+    			append_dev(main, br1);
+    			append_dev(main, t15);
+    			append_dev(main, h1);
+    			append_dev(h1, t16);
+    			append_dev(h1, t17);
+    			append_dev(main, t18);
+    			append_dev(main, h20);
+    			append_dev(h20, t19);
+    			append_dev(h20, t20);
+    			append_dev(main, t21);
+    			append_dev(main, h21);
+    			append_dev(h21, t22);
+    			append_dev(h21, t23);
+    			append_dev(main, t24);
+    			append_dev(main, h22);
+    			append_dev(h22, t25);
+    			append_dev(h22, t26);
+    			append_dev(main, t27);
+    			append_dev(main, p);
+    			append_dev(p, t28);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[2]),
-    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[3]),
-    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[4]),
-    					listen_dev(form, "submit", /*handleSubmit*/ ctx[1], false, false, false)
+    					listen_dev(input0, "input", /*input0_input_handler*/ ctx[6]),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[7]),
+    					listen_dev(input2, "change", /*input2_change_input_handler*/ ctx[8]),
+    					listen_dev(input2, "input", /*input2_change_input_handler*/ ctx[8]),
+    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[9]),
+    					listen_dev(form, "submit", /*handleSubmit*/ ctx[5], false, false, false)
     				];
 
     				mounted = true;
@@ -1784,19 +1848,23 @@ var app = (function () {
     				set_input_value(input0, /*objDataForm*/ ctx[0].pays);
     			}
 
-    			if (dirty & /*objDataForm*/ 1 && t4_value !== (t4_value = /*objDataForm*/ ctx[0].pays + "")) set_data_dev(t4, t4_value);
-
     			if (dirty & /*objDataForm*/ 1 && to_number(input1.value) !== /*objDataForm*/ ctx[0].pop) {
     				set_input_value(input1, /*objDataForm*/ ctx[0].pop);
     			}
 
-    			if (dirty & /*objDataForm*/ 1 && t10_value !== (t10_value = /*objDataForm*/ ctx[0].pop + "")) set_data_dev(t10, t10_value);
-
-    			if (dirty & /*objDataForm*/ 1 && to_number(input2.value) !== /*objDataForm*/ ctx[0].superficie) {
+    			if (dirty & /*objDataForm*/ 1) {
     				set_input_value(input2, /*objDataForm*/ ctx[0].superficie);
     			}
 
-    			if (dirty & /*objDataForm*/ 1 && t16_value !== (t16_value = /*objDataForm*/ ctx[0].superficie + "")) set_data_dev(t16, t16_value);
+    			if (dirty & /*objDataForm*/ 1) {
+    				set_input_value(textarea, /*objDataForm*/ ctx[0].txt);
+    			}
+
+    			if (dirty & /*pays*/ 2) set_data_dev(t17, /*pays*/ ctx[1]);
+    			if (dirty & /*pop*/ 8) set_data_dev(t20, /*pop*/ ctx[3]);
+    			if (dirty & /*superficie*/ 4) set_data_dev(t23, /*superficie*/ ctx[2]);
+    			if (dirty & /*txt*/ 16) set_data_dev(t26, /*txt*/ ctx[4]);
+    			if (dirty & /*pop*/ 8 && t28_value !== (t28_value = /*pop*/ ctx[3] / 100 + "")) set_data_dev(t28, t28_value);
     		},
     		i: noop,
     		o: noop,
@@ -1821,12 +1889,15 @@ var app = (function () {
     function instance$5($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Form", slots, []);
-    	let objDataForm = { pays: "", superficie: 0, pop: 0 };
-    	let pays;
+    	let objDataForm = { pays: "", superficie: 0, pop: 0, txt: "" };
+    	let pays, superficie, pop, txt;
 
     	const handleSubmit = e => {
     		e.preventDefault();
-    		pays = objDataForm.pays;
+    		$$invalidate(1, pays = objDataForm.pays);
+    		$$invalidate(3, pop = objDataForm.pop);
+    		$$invalidate(2, superficie = objDataForm.superficie);
+    		$$invalidate(4, txt = objDataForm.txt);
     		$$invalidate(0, objDataForm.pays = "", objDataForm);
     	};
 
@@ -1846,16 +1917,31 @@ var app = (function () {
     		$$invalidate(0, objDataForm);
     	}
 
-    	function input2_input_handler() {
+    	function input2_change_input_handler() {
     		objDataForm.superficie = to_number(this.value);
     		$$invalidate(0, objDataForm);
     	}
 
-    	$$self.$capture_state = () => ({ objDataForm, pays, handleSubmit });
+    	function textarea_input_handler() {
+    		objDataForm.txt = this.value;
+    		$$invalidate(0, objDataForm);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		objDataForm,
+    		pays,
+    		superficie,
+    		pop,
+    		txt,
+    		handleSubmit
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ("objDataForm" in $$props) $$invalidate(0, objDataForm = $$props.objDataForm);
-    		if ("pays" in $$props) pays = $$props.pays;
+    		if ("pays" in $$props) $$invalidate(1, pays = $$props.pays);
+    		if ("superficie" in $$props) $$invalidate(2, superficie = $$props.superficie);
+    		if ("pop" in $$props) $$invalidate(3, pop = $$props.pop);
+    		if ("txt" in $$props) $$invalidate(4, txt = $$props.txt);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -1864,10 +1950,15 @@ var app = (function () {
 
     	return [
     		objDataForm,
+    		pays,
+    		superficie,
+    		pop,
+    		txt,
     		handleSubmit,
     		input0_input_handler,
     		input1_input_handler,
-    		input2_input_handler
+    		input2_change_input_handler,
+    		textarea_input_handler
     	];
     }
 
@@ -1885,10 +1976,179 @@ var app = (function () {
     	}
     }
 
-    /* src/App.svelte generated by Svelte v3.32.1 */
-    const file$6 = "src/App.svelte";
+    /* src/Reactivity.svelte generated by Svelte v3.32.1 */
+
+    const { console: console_1 } = globals;
+    const file$6 = "src/Reactivity.svelte";
 
     function create_fragment$6(ctx) {
+    	let main;
+    	let h10;
+    	let t2;
+    	let h11;
+    	let t3;
+    	let t4;
+    	let t5;
+    	let p;
+    	let t6;
+    	let t7;
+    	let button;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			main = element("main");
+    			h10 = element("h1");
+    			h10.textContent = `Total non réactif = ${/*totalNonReactif*/ ctx[2]}`;
+    			t2 = space();
+    			h11 = element("h1");
+    			t3 = text("Total réactif = ");
+    			t4 = text(/*totalReactif*/ ctx[0]);
+    			t5 = space();
+    			p = element("p");
+    			t6 = text(/*array*/ ctx[1]);
+    			t7 = space();
+    			button = element("button");
+    			button.textContent = "Changer ma dépense";
+    			add_location(h10, file$6, 31, 4, 691);
+    			add_location(h11, file$6, 32, 4, 742);
+    			add_location(p, file$6, 33, 4, 786);
+    			add_location(button, file$6, 34, 4, 805);
+    			add_location(main, file$6, 29, 0, 679);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, main, anchor);
+    			append_dev(main, h10);
+    			append_dev(main, t2);
+    			append_dev(main, h11);
+    			append_dev(h11, t3);
+    			append_dev(h11, t4);
+    			append_dev(main, t5);
+    			append_dev(main, p);
+    			append_dev(p, t6);
+    			append_dev(main, t7);
+    			append_dev(main, button);
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*depenseAdd*/ ctx[3], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*totalReactif*/ 1) set_data_dev(t4, /*totalReactif*/ ctx[0]);
+    			if (dirty & /*array*/ 2) set_data_dev(t6, /*array*/ ctx[1]);
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(main);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$6.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$6($$self, $$props, $$invalidate) {
+    	let totalReactif;
+    	let { $$slots: slots = {}, $$scope } = $$props;
+    	validate_slots("Reactivity", slots, []);
+    	let val1 = 100;
+    	let val2 = 100;
+    	let val3 = 100;
+    	let array = [1, 2, 3, 4];
+    	let array1;
+    	let totalNonReactif = val1 + val2 + val3;
+
+    	const depenseAdd = () => {
+    		$$invalidate(4, val3 = val3 + 10);
+
+    		//mon tableau non reactif car Svelte comprend que les =
+    		/*array.push(5);
+    console.log(array);*/
+    		$$invalidate(1, array = [...array, 5]);
+    	};
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<Reactivity> was created with unknown prop '${key}'`);
+    	});
+
+    	$$self.$capture_state = () => ({
+    		val1,
+    		val2,
+    		val3,
+    		array,
+    		array1,
+    		totalNonReactif,
+    		depenseAdd,
+    		totalReactif
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("val1" in $$props) $$invalidate(5, val1 = $$props.val1);
+    		if ("val2" in $$props) $$invalidate(6, val2 = $$props.val2);
+    		if ("val3" in $$props) $$invalidate(4, val3 = $$props.val3);
+    		if ("array" in $$props) $$invalidate(1, array = $$props.array);
+    		if ("array1" in $$props) array1 = $$props.array1;
+    		if ("totalNonReactif" in $$props) $$invalidate(2, totalNonReactif = $$props.totalNonReactif);
+    		if ("totalReactif" in $$props) $$invalidate(0, totalReactif = $$props.totalReactif);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*val3*/ 16) {
+    			$$invalidate(0, totalReactif = val1 + val2 + val3);
+    		}
+
+    		if ($$self.$$.dirty & /*val3*/ 16) {
+    			//Fonction reactive à peu près similaire à la dépendance dans useEffect de React
+    			console.log("Vos dépenses ont changé", val1, val2, val3);
+    		}
+
+    		if ($$self.$$.dirty & /*totalReactif*/ 1) {
+    			if (totalReactif > 1000) console.log("attention total des dépenses supérieur à 1000 !!!");
+    		}
+    	};
+
+    	return [totalReactif, array, totalNonReactif, depenseAdd, val3];
+    }
+
+    class Reactivity extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Reactivity",
+    			options,
+    			id: create_fragment$6.name
+    		});
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.32.1 */
+    const file$7 = "src/App.svelte";
+
+    function create_fragment$7(ctx) {
     	let main;
     	let div1;
     	let list1;
@@ -1913,6 +2173,8 @@ var app = (function () {
     	let input;
     	let t12;
     	let form;
+    	let t13;
+    	let reactivity;
     	let current;
     	let mounted;
     	let dispose;
@@ -1929,6 +2191,11 @@ var app = (function () {
     	each_1 = new Each({ props: { class: "p-1" }, $$inline: true });
     	input = new Input({ $$inline: true });
     	form = new Form({ $$inline: true });
+
+    	reactivity = new Reactivity({
+    			props: { class: "flex-1" },
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
@@ -1959,17 +2226,19 @@ var app = (function () {
     			create_component(input.$$.fragment);
     			t12 = space();
     			create_component(form.$$.fragment);
-    			add_location(p, file$6, 34, 25, 750);
-    			add_location(button0, file$6, 35, 12, 780);
-    			add_location(button1, file$6, 36, 12, 833);
-    			add_location(button2, file$6, 37, 12, 886);
+    			t13 = space();
+    			create_component(reactivity.$$.fragment);
+    			add_location(p, file$7, 35, 25, 800);
+    			add_location(button0, file$7, 36, 12, 830);
+    			add_location(button1, file$7, 37, 12, 883);
+    			add_location(button2, file$7, 38, 12, 936);
     			attr_dev(div0, "class", "p-1");
-    			add_location(div0, file$6, 34, 8, 733);
+    			add_location(div0, file$7, 35, 8, 783);
     			attr_dev(div1, "class", "flex justify-around");
-    			add_location(div1, file$6, 32, 4, 631);
-    			attr_dev(div2, "class", "flex justify-around");
-    			add_location(div2, file$6, 44, 4, 1043);
-    			add_location(main, file$6, 31, 0, 620);
+    			add_location(div1, file$7, 33, 4, 681);
+    			attr_dev(div2, "class", "flex ");
+    			add_location(div2, file$7, 45, 4, 1093);
+    			add_location(main, file$7, 32, 0, 670);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1999,6 +2268,8 @@ var app = (function () {
     			mount_component(input, div2, null);
     			append_dev(div2, t12);
     			mount_component(form, div2, null);
+    			append_dev(div2, t13);
+    			mount_component(reactivity, div2, null);
     			current = true;
 
     			if (!mounted) {
@@ -2031,6 +2302,7 @@ var app = (function () {
     			transition_in(each_1.$$.fragment, local);
     			transition_in(input.$$.fragment, local);
     			transition_in(form.$$.fragment, local);
+    			transition_in(reactivity.$$.fragment, local);
     			current = true;
     		},
     		o: function outro(local) {
@@ -2040,6 +2312,7 @@ var app = (function () {
     			transition_out(each_1.$$.fragment, local);
     			transition_out(input.$$.fragment, local);
     			transition_out(form.$$.fragment, local);
+    			transition_out(reactivity.$$.fragment, local);
     			current = false;
     		},
     		d: function destroy(detaching) {
@@ -2050,6 +2323,7 @@ var app = (function () {
     			destroy_component(each_1);
     			destroy_component(input);
     			destroy_component(form);
+    			destroy_component(reactivity);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -2057,7 +2331,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$6.name,
+    		id: create_fragment$7.name,
     		type: "component",
     		source: "",
     		ctx
@@ -2066,7 +2340,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$6($$self, $$props, $$invalidate) {
+    function instance$7($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("App", slots, []);
     	let titre = "Mes lignesssss";
@@ -2105,6 +2379,7 @@ var app = (function () {
     		Each,
     		Input,
     		Form,
+    		Reactivity,
     		titre,
     		myObject,
     		compteur,
@@ -2129,13 +2404,13 @@ var app = (function () {
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {});
+    		init(this, options, instance$7, create_fragment$7, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "App",
     			options,
-    			id: create_fragment$6.name
+    			id: create_fragment$7.name
     		});
     	}
     }

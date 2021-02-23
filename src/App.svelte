@@ -5,6 +5,7 @@
     import Each from "./Each.svelte";
     import Input from "./Input.svelte";
     import Form from "./Form.svelte";
+    import Reactivity from "./Reactivity.svelte";
 
     let titre = "Mes lignesssss";
 
@@ -45,6 +46,10 @@
     <div class="flex justify-around">
         <Input/>
         <Form/>
+        <Reactivity/>
+    </div>
+    <div class="flex justify-around">
+
     </div>
 
 
