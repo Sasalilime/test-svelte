@@ -1,11 +1,26 @@
 <script>
 
-    import {createEventDispatcher} from 'svelte';
+    import {createEventDispatcher, onMount, onDestroy, beforeUpdate, afterUpdate} from 'svelte';
+
+
     const dispatch = createEventDispatcher();
 
-    const info = ()=>{
+    const info = () => {
         dispatch('info-carte', {customtxt: 'Panier modifié'});
     }
+
+    onMount(()=>{
+        console.log('Je me crée');
+    });
+    onDestroy(()=>{
+        console.log('Je suis détruit');
+    });
+    beforeUpdate(()=>{
+        console.log('Je vais me mettre à jour');
+    });
+    afterUpdate(()=>{
+        console.log('Je suis bien à  jour');
+    });
 
 </script>
 
@@ -16,9 +31,8 @@
     <button on:click={info}>Clique !</button>
 </main>
 
-
 <style>
-    .child{
+    .child {
         border: solid 1px;
         padding: 15px;
     }
