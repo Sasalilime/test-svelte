@@ -2673,23 +2673,125 @@ var app = (function () {
 
     function create_fragment$a(ctx) {
     	let main;
+    	let div5;
+    	let div2;
+    	let div0;
+    	let t1;
+    	let div1;
+    	let t3;
+    	let div3;
+    	let h20;
+    	let t5;
+    	let p0;
+    	let div3_class_value;
+    	let t7;
+    	let div4;
+    	let h21;
+    	let t9;
+    	let p1;
+    	let div4_class_value;
+    	let mounted;
+    	let dispose;
 
     	const block = {
     		c: function create() {
     			main = element("main");
-    			add_location(main, file$a, 4, 0, 21);
+    			div5 = element("div");
+    			div2 = element("div");
+    			div0 = element("div");
+    			div0.textContent = "Formule $";
+    			t1 = space();
+    			div1 = element("div");
+    			div1.textContent = "Formule $$$";
+    			t3 = space();
+    			div3 = element("div");
+    			h20 = element("h2");
+    			h20.textContent = "Contenu 1";
+    			t5 = space();
+    			p0 = element("p");
+    			p0.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab amet aperiam harum illo, illum iusto\n                labore\n                nesciunt omnis reprehenderit saepe similique vel vitae. Perferendis!";
+    			t7 = space();
+    			div4 = element("div");
+    			h21 = element("h2");
+    			h21.textContent = "Contenu 2";
+    			t9 = space();
+    			p1 = element("p");
+    			p1.textContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae, consequuntur\n                impedit laudantium mollitia nemo odit omnis optio, perspiciatis provident quam rem repellat sapiente\n                vero.";
+    			attr_dev(div0, "class", "selecteur s1 svelte-5tuhj7");
+    			add_location(div0, file$a, 13, 12, 201);
+    			attr_dev(div1, "class", "selecteur s2 svelte-5tuhj7");
+    			add_location(div1, file$a, 14, 12, 280);
+    			attr_dev(div2, "class", "selecteurs svelte-5tuhj7");
+    			add_location(div2, file$a, 12, 8, 164);
+    			add_location(h20, file$a, 18, 12, 450);
+    			add_location(p0, file$a, 19, 12, 481);
+
+    			attr_dev(div3, "class", div3_class_value = "" + (null_to_empty(/*toggleOnglets*/ ctx[0] === 1
+    			? "contenu visible"
+    			: "contenu") + " svelte-5tuhj7"));
+
+    			add_location(div3, file$a, 17, 8, 373);
+    			add_location(h21, file$a, 25, 12, 798);
+    			add_location(p1, file$a, 26, 12, 829);
+
+    			attr_dev(div4, "class", div4_class_value = "" + (null_to_empty(/*toggleOnglets*/ ctx[0] === 2
+    			? "contenu visible"
+    			: "contenu") + " svelte-5tuhj7"));
+
+    			add_location(div4, file$a, 24, 8, 721);
+    			attr_dev(div5, "class", "box-onglets svelte-5tuhj7");
+    			add_location(div5, file$a, 11, 4, 130);
+    			add_location(main, file$a, 10, 0, 119);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
+    			append_dev(main, div5);
+    			append_dev(div5, div2);
+    			append_dev(div2, div0);
+    			append_dev(div2, t1);
+    			append_dev(div2, div1);
+    			append_dev(div5, t3);
+    			append_dev(div5, div3);
+    			append_dev(div3, h20);
+    			append_dev(div3, t5);
+    			append_dev(div3, p0);
+    			append_dev(div5, t7);
+    			append_dev(div5, div4);
+    			append_dev(div4, h21);
+    			append_dev(div4, t9);
+    			append_dev(div4, p1);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(div0, "click", /*click_handler*/ ctx[2], false, false, false),
+    					listen_dev(div1, "click", /*click_handler_1*/ ctx[3], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
     		},
-    		p: noop,
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*toggleOnglets*/ 1 && div3_class_value !== (div3_class_value = "" + (null_to_empty(/*toggleOnglets*/ ctx[0] === 1
+    			? "contenu visible"
+    			: "contenu") + " svelte-5tuhj7"))) {
+    				attr_dev(div3, "class", div3_class_value);
+    			}
+
+    			if (dirty & /*toggleOnglets*/ 1 && div4_class_value !== (div4_class_value = "" + (null_to_empty(/*toggleOnglets*/ ctx[0] === 2
+    			? "contenu visible"
+    			: "contenu") + " svelte-5tuhj7"))) {
+    				attr_dev(div4, "class", div4_class_value);
+    			}
+    		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(main);
+    			mounted = false;
+    			run_all(dispose);
     		}
     	};
 
@@ -2704,16 +2806,34 @@ var app = (function () {
     	return block;
     }
 
-    function instance$a($$self, $$props) {
+    function instance$a($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Onglet", slots, []);
+    	let toggleOnglets = 1;
+
+    	const toggle = index => {
+    		$$invalidate(0, toggleOnglets = index);
+    	};
+
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Onglet> was created with unknown prop '${key}'`);
     	});
 
-    	return [];
+    	const click_handler = () => toggle(1);
+    	const click_handler_1 = () => toggle(2);
+    	$$self.$capture_state = () => ({ toggleOnglets, toggle });
+
+    	$$self.$inject_state = $$props => {
+    		if ("toggleOnglets" in $$props) $$invalidate(0, toggleOnglets = $$props.toggleOnglets);
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [toggleOnglets, toggle, click_handler, click_handler_1];
     }
 
     class Onglet extends SvelteComponentDev {
