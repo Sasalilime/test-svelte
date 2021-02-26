@@ -10,6 +10,7 @@
     import ChildToParent from "./ChildToParent.svelte";
     import Modal from "./Modal.svelte";
     import Onglet from "./Onglet.svelte";
+    import NavBar from "./NavBar.svelte";
 
 
     let titre = "Mes lignesssss";
@@ -37,14 +38,15 @@
     const fonctionParent = (event) => {
         console.log('Quelque chose a changé' + event.detail.customtxt);
     }
-    let toggle = true;
-    let toggleModal = true;
+    let toggle = false;
+    let toggleModal = false;
     const handleModal = () => {
         toggleModal = !toggleModal
     };
 
 </script>
 <main>
+    <NavBar/>
     <div class="flex justify-around">
         <List1 class="p-1" montitre={titre} {...myObject}/>
         <div class="p-1"><p>{compteur}</p>
