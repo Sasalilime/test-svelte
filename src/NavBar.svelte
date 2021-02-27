@@ -1,22 +1,39 @@
 <script>
 
+    import {onMount} from 'svelte';
+
+    let toggleMenu = false;
+    const toggleMenuRes = () => {
+        toggleMenu = !toggleMenu;
+    }
+
+    const resetMenu = () => {
+        toggleMenu = false;
+    }
+
+    onMount(() => {
+        const mediaListener = window.matchMedia("(max-width: 650px)");
+
+        mediaListener.addListener(resetMenu);
+    })
 
 </script>
 
 
 <main>
     <nav>
-        <div class="logo">
+        <div on:click={toggleMenuRes} class="logo">
             <div>&#9776;</div>
         </div>
 
-        <ul class="list-nav">
-            <li><a class="items-nav" href="#">lorem</a></li>
-            <li><a class="items-nav" href="#">lorem</a></li>
-            <li><a class="items-nav" href="#">lorem</a></li>
-            <li><a class="items-nav" href="#">lorem</a></li>
-            <li><a class="items-nav" href="#">lorem</a></li>
-            <li><a class="items-nav" href="#">lorem</a></li>
+        <ul class={toggleMenu ? "list-nav visible" : "list-nav"}>
+            <li class="items-nav"><a href="#">lorem</a></li>
+            <li class="items-nav"><a href="#">lorem</a></li>
+            <li class="items-nav"><a href="#">lorem</a></li>
+            <li class="items-nav"><a href="#">lorem</a></li>
+            <li class="items-nav"><a href="#">lorem</a></li>
+            <li class="items-nav"><a href="#">lorem</a></li>
+
 
         </ul>
 
@@ -51,13 +68,13 @@
     }
 
     .list-nav li a {
-        color:white;
+        color: white;
         text-decoration: none;
         margin: 0 10px;
         font-size: 22px;
     }
 
-    @media only screen and (max-width: 650px){
+    @media only screen and (max-width: 650px) {
         .logo {
             display: block;
         }
@@ -67,6 +84,10 @@
             position: relative;
             top: 70px;
             display: none;
+        }
+
+        .list-nav.visible {
+            display: block;
         }
 
         .items-nav {
