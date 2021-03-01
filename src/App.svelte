@@ -28,6 +28,17 @@
     //storeData.update(value => value + 10) ex 20 si a la base value = 10
 
 
+    //custom Store
+    import CustomStore from "./store/store2";
+
+    let data;
+
+    CustomStore.subscribe((value) => {
+        data = value;
+    });
+
+    CustomStore.addBox({id: 4, text: 'Lorem4'});
+
     let titre = "Mes lignesssss";
 
     let myObject = {
@@ -60,9 +71,21 @@
     };
 
 </script>
+
+
 <main>
+
+
     <NavBar/>
+
+    {#each data as box (box.id)}
+        <div>
+            <h2>{box.text}</h2>
+            <h3>{box.id}</h3>
+        </div>
+    {/each}
     <h1>{txt}</h1>
+
     <div class="flex justify-around">
         <List1 class="p-1" montitre={titre} {...myObject}/>
         <div class="p-1"><p>{compteur}</p>
@@ -89,7 +112,8 @@
                 <ChildToParent on:info-carte={fonctionParent}>
                     <h2>Mon titre depuis le parent</h2>
                     <div slot="contenu">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, consequuntur corporis debitis
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, consequuntur corporis
+                            debitis
                             eligendi
                             eum hic minus, nemo, omnis reprehenderit similique totam vero voluptas voluptatibus
                             voluptatum?</p>
@@ -114,7 +138,6 @@
 
 
 </main>
-
 
 <style global>
     @import 'tailwindcss/base';
