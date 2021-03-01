@@ -12,6 +12,21 @@
     import Onglet from "./Onglet.svelte";
     import NavBar from "./NavBar.svelte";
 
+    //store
+
+    import storeData from './store/store';
+
+    let txt;
+    //permet de souscrire à un store et mettre à jour des données en cas de changements
+    storeData.subscribe((value) => {
+        txt = value;
+    })
+    //permet de modifier les valeur dans le store
+    storeData.set('Lorem ipsus')
+
+    //Mettre à  jour le store à partir des données du store
+    //storeData.update(value => value + 10) ex 20 si a la base value = 10
+
 
     let titre = "Mes lignesssss";
 
@@ -47,6 +62,7 @@
 </script>
 <main>
     <NavBar/>
+    <h1>{txt}</h1>
     <div class="flex justify-around">
         <List1 class="p-1" montitre={titre} {...myObject}/>
         <div class="p-1"><p>{compteur}</p>
@@ -95,7 +111,6 @@
             <Onglet/>
         </div>
     </div>
-
 
 
 </main>
